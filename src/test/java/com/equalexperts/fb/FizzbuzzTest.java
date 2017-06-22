@@ -20,13 +20,14 @@ public class FizzbuzzTest {
     @Test
     public void twentyGivesExpectedOutput() {
         String output = Fizzbuzz.createOutput(20);
-        final String expected = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz";
+        final String expected = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz fizz: 4 buzz: 3 fizzbuzz: 1 lucky: 2 integer: 10";
         assertEquals(expected, output);
     }
 
     @Test
-    public void twoDigitNumbersWithThreeGiveLucky() {
+    public void thirtyNumbersGivesFourLucky() {
+        //3 13 and 30
         String output = Fizzbuzz.createOutput(30);
-        assertTrue(output.endsWith("lucky"));
+        assertTrue(output.contains("lucky: 4"));
     }
 }
