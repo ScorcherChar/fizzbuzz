@@ -7,7 +7,7 @@ public class Fizzbuzz {
 
     /**
      * Creates a string counting from one to the given max replacing every third number with fiz, 5th with buzz and
-     * fifteenth with fizzbuzz.
+     * fifteenth with fizzbuzz. Any number containing 3 will return lucky
      * @param max the max number to count to. Expected to be one or more.
      * @return the output string.
      * @exception IllegalArgumentException On input error.
@@ -23,7 +23,9 @@ public class Fizzbuzz {
     }
 
     private static String toFizzbuzzWord(final Integer inputNumber){
-        if(isExactMultipleOf(inputNumber, 15)){
+        if(containsAThree(inputNumber)){
+            return "lucky";
+        }else if(isExactMultipleOf(inputNumber, 15)){
             return "fizzbuzz";
         }else if(isExactMultipleOf(inputNumber, 5)){
             return "buzz";
@@ -32,6 +34,10 @@ public class Fizzbuzz {
         }else {
             return inputNumber.toString();
         }
+    }
+
+    private static boolean containsAThree(Integer inputNumber) {
+        return inputNumber.toString().contains("3");
     }
 
     private static boolean isExactMultipleOf(final int inputNumber, final int multiple) {
