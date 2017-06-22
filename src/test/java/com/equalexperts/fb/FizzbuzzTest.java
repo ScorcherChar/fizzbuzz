@@ -30,4 +30,11 @@ public class FizzbuzzTest {
         String output = Fizzbuzz.createOutput(30);
         assertTrue(output.contains("lucky: 4"));
     }
+
+    @Test
+    public void worksWhenNoOccurrencesOfAWord() {
+        String output = Fizzbuzz.createOutput(14);
+        final String expected = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizz: 3 buzz: 2 fizzbuzz: 0 lucky: 2 integer: 7";
+        assertEquals(expected, output);
+    }
 }
